@@ -15,10 +15,10 @@
     }
 
     :root {
-      --bg: #0a0f1e;         /* dasar gelap */
+      --bg: #0a0f1e;
       --card-bg: rgba(20, 30, 50, 0.6);
-      --accent: #38bdf8;      /* biru terang */
-      --accent-glow: #8b5cf6; /* ungu buat efek */
+      --accent: #38bdf8;
+      --accent-glow: #8b5cf6;
       --text: #e2e8f0;
       --text-dim: #94a3b8;
     }
@@ -31,7 +31,6 @@
       overflow-x: hidden;
     }
 
-    /* ===== ANIMASI GLOBAL ===== */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -41,7 +40,7 @@
       animation: fadeIn 0.8s ease-out forwards;
     }
 
-    /* ===== BACKGROUND BINTANG (BIAR KAYAK GALAKSI) ===== */
+    /* efek bintang */
     body::before {
       content: '';
       position: fixed;
@@ -65,7 +64,6 @@
       z-index: -1;
     }
 
-    /* ===== HEADER / HERO ===== */
     header {
       min-height: 90vh;
       display: flex;
@@ -76,6 +74,17 @@
       padding: 2rem;
       position: relative;
       background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1), transparent 70%);
+    }
+
+    /* foto profil */
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px rgba(56,189,248,0.5);
     }
 
     header h1 {
@@ -98,7 +107,6 @@
       animation: fadeIn 1s 0.2s both;
     }
 
-    /* ===== SOCIAL ICONS ===== */
     .social-links {
       display: flex;
       gap: 1.5rem;
@@ -129,7 +137,6 @@
       box-shadow: 0 0 20px rgba(56,189,248,0.3);
     }
 
-    /* ===== SECTION UMUM ===== */
     .section-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -146,7 +153,6 @@
       padding-bottom: 0.5rem;
     }
 
-    /* ===== CARD ===== */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -201,7 +207,6 @@
       font-size: 0.9rem;
     }
 
-    /* ===== SKILL BARS ===== */
     .skill-item {
       margin: 1.5rem 0;
     }
@@ -228,7 +233,6 @@
       transition: width 1.2s ease-in-out;
     }
 
-    /* ===== KONTAK ===== */
     .contact-card {
       background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
       backdrop-filter: blur(10px);
@@ -251,7 +255,6 @@
       width: 25px;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 3rem 2rem;
@@ -264,41 +267,47 @@
       color: #f43f5e;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .section-container { padding: 3rem 1.5rem; }
       h2 { font-size: 2rem; }
       .card-grid { grid-template-columns: 1fr; }
+      .profile-pic { width: 120px; height: 120px; }
     }
 
-    /* ===== SMOOTH SCROLL ===== */
     html {
       scroll-behavior: smooth;
     }
   </style>
+  .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(56,189,248,0.5);
+}
 </head>
 <body>
-
-  <!-- HEADER -->
   <header id="home">
-    <h1>Eswa Anggit</h1>
+    <!-- Foto profil (ganti nanti) -->
+    <img src="fotoku.jpg" alt="Foto Profil" class="profile-pic">
+    <h1>Eswa Anggit Pandhito</h1>
     <div class="tagline">
-      Pelajar | Calon Programmer | Pecinta Astronomi & Filsafat
+      Pelajar | Calon Suami Furina | Pecinta Tsundere & Rambut Pendek
     </div>
     <div class="social-links">
-      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/furinabreakdance" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/anggit0twgonnabe" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.tiktok.com/@uanticlimaxz" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://tiktok.com/@anticlimaxz" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
-    <!-- sedikit scroll hint -->
     <div style="position: absolute; bottom: 30px; font-size: 0.9rem; color: var(--text-dim);">
       <i class="fas fa-chevron-down"></i> scroll <i class="fas fa-chevron-down"></i>
     </div>
   </header>
 
-  <!-- TENTANG SAYA -->
   <section id="about">
     <div class="section-container">
       <h2>Tentang Saya</h2>
@@ -315,7 +324,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="section-container">
       <h2>Skill & Pembelajaran</h2>
@@ -348,7 +356,6 @@
     </div>
   </section>
 
-  <!-- PROYEK / PORTOFOLIO -->
   <section id="projects">
     <div class="section-container">
       <h2>Proyek Saya</h2>
@@ -378,7 +385,6 @@
     </div>
   </section>
 
-  <!-- PRESTASI / PENCAPAIAN -->
   <section id="achievements">
     <div class="section-container">
       <h2>Pencapaian</h2>
@@ -399,14 +405,13 @@
     </div>
   </section>
 
-  <!-- KONTAK -->
   <section id="contact">
     <div class="section-container">
       <h2>Hubungi Saya</h2>
       <div class="contact-card">
-        <p><i class="fas fa-envelope"></i> eswa.anggit@email.com</p>
+        <p><i class="fas fa-envelope"></i> furinabreakdance@gmail.com</p>
         <p><i class="fas fa-map-marker-alt"></i> Bantargebang, Bekasi, Indonesia</p>
-        <p><i class="fas fa-globe"></i> @eswa_anggit (IG/Twitter)</p>
+        <p><i class="fas fa-globe"></i> @anggit0twgonnabe (IG) | @anticlimaxz (TikTok)</p>
         <div style="margin-top: 2rem;">
           <a href="#" style="color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 0.8rem 2rem; border-radius: 50px; transition: 0.3s;">Kirim Pesan</a>
         </div>
@@ -414,15 +419,12 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>Dibuat dengan <i class="fas fa-heart"></i> oleh Eswa & DeepSeek R1</p>
     <p style="font-size: 0.85rem; margin-top: 1rem;">"Ilmu adalah cahaya, dan perjalanan ini belum selesai."</p>
   </footer>
 
-  <!-- SCRIPT SEDERHANA UNTUK ANIMASI PROGRESS BAR (OPSIONAL) -->
   <script>
-    // Fungsi untuk mengecek apakah elemen terlihat di layar
     function isElementInViewport(el) {
       const rect = el.getBoundingClientRect();
       return (
@@ -433,15 +435,13 @@
       );
     }
 
-    // Progress bar animation
     function animateProgressBars() {
       const progressFills = document.querySelectorAll('.progress-fill');
       progressFills.forEach(fill => {
         if (isElementInViewport(fill) && !fill.classList.contains('animated')) {
-          const width = fill.style.width; // simpan lebar target
+          const width = fill.style.width;
           fill.style.width = '0';
           fill.classList.add('animated');
-          // force reflow
           void fill.offsetWidth;
           fill.style.transition = 'width 1.2s ease-in-out';
           fill.style.width = width;
@@ -452,6 +452,5 @@
     window.addEventListener('load', animateProgressBars);
     window.addEventListener('scroll', animateProgressBars);
   </script>
-
 </body>
 </html>
